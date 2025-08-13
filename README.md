@@ -1,5 +1,7 @@
 ## From Useless to Useful: RAV4 PHEV EU 150W Outlet Upgraded to 1000W
 
+![image8](images/8.jpeg "installed")
+
 The US version of the 2025 Toyota RAV4 PHEV/Prime is equipped with a 1500W 110V AC outlet in the rear cargo area for higher trim levels.
 
 The EU version provides only a 150W 230V AC outlet in the same location for equivalent trims.
