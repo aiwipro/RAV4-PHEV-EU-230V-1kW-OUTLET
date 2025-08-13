@@ -1,38 +1,38 @@
-## 2025 RAV4 PHEV (EU Spec) 150W to 1000W 230V Outlet Upgrade – Stock Look
+## 2025 RAV4 PHEV (EU Spec) – 150W to 1000W 230V Outlet Upgrade (Stock Look)
 
-The US version of the 2025 Toyota RAV4 PHEV/Prime has a 1500W 110V AC outlet in the rear cargo area for its higher trim versions.
+The US version of the 2025 Toyota RAV4 PHEV/Prime is equipped with a 1500W 110V AC outlet in the rear cargo area for higher trim levels.
 
-The EU version of the 2025 Toyota RAV4 PHEV/Prime has a 150W 230V AC outlet in the rear cargo area for its higher trim versions.
+The EU version provides only a 150W 230V AC outlet in the same location for equivalent trims.
 
-150W is barely useful, as even some laptops may require more power than this. Though not confirmed, some sources claim this limitation is due to EU regulations.
+At 150W, the outlet is of limited use, as some laptops can draw more power. While unconfirmed, some sources suggest this limitation is due to EU regulations.
 
-In this project, we upgrade the maximum output power of the rear AC outlet in the EU version of the 2025 Toyota RAV4 PHEV to 1000W using a 12V inverter.
+This project upgrades the maximum output of the EU-spec rear AC outlet to 1000W using a 12V inverter, while retaining the stock appearance.
 
-The build is 100% reversible and non-destructive. There should be no warranty issues, but as an extra precaution, all parts can be removed prior to sending the car for annual service.
+The build is fully reversible and non-destructive. Warranty issues are not anticipated; however, components can be removed before scheduled servicing as a precaution.
 
-The inverter will need a steady supply of fresh air when in use. Therefore, it is placed in the rear compartment intended for charging cables.
+The inverter is positioned in the rear compartment designed for charging cable storage to ensure adequate airflow during operation.
 
-There are several options for which inverter to use. The Victron 12/1200 Inverter is an excellent choice, as it has a 12V trigger input for on/off. Due to cost constraints, this project uses a Renogy 1000W inverter instead.
+Although the Victron 12/1200 Inverter is ideal due to its 12V trigger input for on/off control, the Renogy 1000W inverter was chosen here for cost reasons.
 
 
 ## The Plan
 
-The US version has its inverter connected to the high-voltage system. We will not touch this system, and instead connect our inverter to the starter battery—a regular 12V battery located in the rear cargo area.
+The US-spec inverter is connected to the high-voltage (HV) system. This project avoids modification of the HV system by connecting the new inverter to the 12V starter battery, located in the rear cargo area.
 
-The output power we can achieve is limited to the maximum current the internal system can supply when charging the starter battery. According to online sources, this limit is approximately 1250W. Charging is handled by an internal DC-DC converter, with current flowing from the high-voltage system to the low-voltage starter battery.
+Output power is limited by the maximum current the vehicle’s DC-DC converter can provide when charging the starter battery, estimated at ~1250W. Power flows from the HV system through a DC-DC converter to the 12V battery.
 
-The stock 230V Schuko outlet will be reused in this project. However, it has very thin wires and a special connector to the car. We will simply use the socket and fit our own cable directly to the outlet’s pins. Since we won’t have regular 230V 16A household power connecting to the outlet, its internals appear more than capable of handling the very low currents for this project. The maximum current will be about 1000W ÷ 230V ≈ 4.4A.
+The existing 230V Schuko outlet is reused, but its original thin wiring and proprietary connector are bypassed. A custom cable is connected directly to the outlet’s pins. As the outlet will only carry a load of ~4.4A (1000W ÷ 230V), its internal design is sufficient for the task.
 
-Without modifications, the inverter will run regardless if the car is on or off. This is problematic, as it will drain the starter battery if not manually shut off. To automate power on/off for the inverter, the 12V cigarette lighter outlet next to the Schuko outlet will be used as a trigger. By default, both outlets have power when the car is in the READY state (turned on). Using an optocoupler or relay, we use the presence of 12V to trigger the inverter to turn on. When voltage drops to 0V (car turns off), the optocoupler/relay will switch the inverter off.
+Without control logic, the inverter operates regardless of vehicle state, risking 12V battery drain. Automatic on/off control is achieved by using the adjacent 12V cigarette lighter outlet as a trigger source. This outlet, along with the Schuko outlet, is powered only when the vehicle is in READY mode. An optocoupler or relay detects the 12V presence and signals the inverter to power on. When voltage drops to zero, the inverter shuts down.
 
-It is possible to make the on/off relay control the 12V high-current wiring directly, but it is preferable to use an inverter with a wired remote control feature. The Victron 12/1200 has a 12V trigger port, and the Renogy 12V 1000W inverter has a control board connected for on/off. This reduces the risk of failure in the high-current harness and can provide soft-start functionality (depending on the inverter).
+While a relay could switch the inverter’s high-current input directly, it is safer and more reliable to use the inverter’s remote control interface. The Victron 12/1200 offers a dedicated trigger port; the Renogy 1000W uses a control board for the same purpose, reducing high-current wiring risks and allowing soft-start functionality on compatible units.
 
 
 ## Parts List
 
 - Renogy 1000W 12VDC → 230VAC Inverter
 
-- 35mm² (included with the inverter) 500mm DC wiring with lugs
+- 35 mm² × 500 mm DC wiring with lugs (included with inverter)
 
 - 150A in-line fuse for 12VDC
 
@@ -50,38 +50,38 @@ It is possible to make the on/off relay control the 12V high-current wiring dire
 
 - RJ45-terminated low-voltage wiring (Ethernet cable used in this build)
 
-- Electrical tape
-
-- Heat shrink tubing
-
-- Zip ties
+- Electrical tape, heat shrink tubing, zip ties
 
 
 ## The Build
 
 ### 12VDC High-Current Cable
 
-The inverter came with a set of 500mm long cables with pre-installed cable lugs.
+The inverter’s supplied 500 mm cables with lugs are used.
 
-The red cable is cut approximately 100mm from one end, and a 150A fuse is installed in-line.
+The red cable is cut ~100 mm from one end, and a 150A fuse is installed in-line.
 
-The black cable is left unmodified.
+The black cable remains unmodified.
 
 ![image1](images/1.jpeg "the red cable")
 
 
 ### 12VDC Low-Current Trigger Cable
 
-By slightly disassembling the 12V power outlet, it is possible to attach low-voltage wiring with a connector—without soldering. The cable is secured to the plastic shell of the outlet using a zip tie.
+Low-voltage wiring is attached to the 12V outlet without soldering by partially disassembling the outlet.
+
+The cable is secured to the outlet’s plastic housing with a zip tie.
 
 ![image2](images/2.jpeg "12V trigger")
 
 
 ### 230VAC Outlet Cable
 
-A cable with an IEC60320 C14 receptacle is cut, and 2.8mm flat-pin connectors are crimped to the cable ends.
+An IEC60320 C14 with cable is cut, and 2.8 mm flat-pin connectors are crimped to the conductors.
 
-After adding insulating heat shrink to each connector, they are connected to the separate pins of the outlet. The cable is then secured to the outlet’s plastic shell with a zip tie.
+Heat shrink insulation is applied to each connector before they are fitted to the outlet pins.
+
+The cable is fixed to the outlet housing with a zip tie.
 
 ![image3](images/3.jpeg "IEC w crimps")
 
@@ -94,11 +94,11 @@ After adding insulating heat shrink to each connector, they are connected to the
 
 The Renogy inverter’s remote control board connects via an RJ45 connector. When the remote switch is in the "on" position, pins 3 and 5 have continuity. In the "off" position, continuity is broken.
 
-Using an Ethernet cable, the inverter can be turned on by shorting the blue-white and blue-green wires.
+Using an Ethernet cable, the inverter is turned on by shorting the blue-white and blue-green wires.
 
-At one end, the optocoupler/relay is connected to the 12V outlet cable with a polarity-protected connector. The cable connects to V, G, and trigger (two wires used). Depending on your setup, some relays turn on when the trigger is "low" and others when it is "high."
+At one end, the optocoupler/relay is connected to the 12V outlet cable with a polarity-protected connector. V, G, and trigger lines are connected (two wires used). Relay logic depends on the chosen device (trigger high or low).
 
-At the other end, the optocoupler/relay is connected to the Ethernet cable—in this case, white-blue and white-green to the relay pins.
+At the other end, the relay output is connected to the Ethernet cable (white-blue and white-green to relay pins).
 
 ![image6](images/6.jpeg "the relay")
 
@@ -107,15 +107,17 @@ At the other end, the optocoupler/relay is connected to the Ethernet cable—in 
 
 ## Installation into the Car
 
-1. Reinstall the plastic part with the modified 230V and 12V outlets into the car.
+1. Reinstall the outlet panel with modified 230V and 12V wiring.
 
-2. If possible, switch the in-line 150A fuse to “off” and connect the red high-current 12V cable to the car battery, ensuring the fuse is close to the battery terminal. Connect the other end to the inverter.
+2. With the fuse OFF, connect the red high-current cable to the battery (fuse near the terminal), then to the inverter.
 
-3. Connect the black high-current 12V cable to the car battery and the inverter.
+3. Connect the black high-current cable from the battery to the inverter.
 
-4. Connect the 230VAC cable to the inverter and the IEC connector.
+4. Connect the 230V cable from inverter to IEC receptacle.
 
 5. Connect the 12V trigger cable to the inverter and the custom outlet trigger connector.
+
+6. Replace the plastic trim
 
 ![image8](images/8.jpeg "installed")
 
